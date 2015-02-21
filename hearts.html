@@ -1,0 +1,42 @@
+<head>
+    <title>Hearts Document</title>
+</head>
+
+<body>
+<div class="container">
+    <header>
+        <h1>Hearts Document</h1>
+
+        <form class="new-message">
+            <input type="text" name="text" placeholder="Type to add new message" />
+        </form>
+
+        <form class="new-title">
+            <input type="text" name="text" placeholder="Type to add new title" />
+        </form>
+
+    </header>
+
+    <ul>
+        {{#each messages}}
+            {{> message}}
+        {{/each}}
+    </ul>
+</div>
+</body>
+
+<template name="message">
+    <li>
+        <button class="delete">x</button>
+        <span class="{{messageType}}">{{text}}</span>
+
+        <button class="move_up">⬆</button>
+        <button class="move_down">⬇</button>
+
+        {{#if usesHearts}}
+            <button class="heart">heart</button>
+            <span class="hearts">{{displayHearts}}</span>
+        {{/if}}
+
+    </li>
+</template>
