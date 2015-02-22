@@ -68,13 +68,17 @@ if (Meteor.isClient) {
         },
         "click .move_up": function() {
             var messageToSwitch = Messages.findOne({createdAt: {$lt: this.createdAt}}, {sort: {createdAt: -1}});
-            Messages.update(messageToSwitch._id, {$set: {createdAt: this.createdAt}});
-            Messages.update(this._id, {$set: {createdAt: messageToSwitch.createdAt}});
+            if (messageToSwitch !== undefined) {
+                Messages.update(messageToSwitch._id, {$set: {createdAt: this.createdAt}});
+                Messages.update(this._id, {$set: {createdAt: messageToSwitch.createdAt}});
+            }
         },
         "click .move_down": function() {
             var messageToSwitch = Messages.findOne({createdAt: {$gt: this.createdAt}}, {sort: {createdAt: 1}});
-            Messages.update(messageToSwitch._id, {$set: {createdAt: this.createdAt}});
-            Messages.update(this._id, {$set: {createdAt: messageToSwitch.createdAt}});
+            if (messageToSwitch !== undefined) {
+                Messages.update(messageToSwitch._id, {$set: {createdAt: this.createdAt}});
+                Messages.update(this._id, {$set: {createdAt: messageToSwitch.createdAt}});
+            }
         }
     });
 }
