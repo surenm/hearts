@@ -3,6 +3,7 @@ body {
     background-color: #315481;
     background-image: linear-gradient(to bottom, #315481, #918e82 100%);
     background-attachment: fixed;
+    color: #364A85;
 
     position: absolute;
     top: 0;
@@ -17,17 +18,15 @@ body {
 }
 
 .container {
-    max-width: 600px;
-    margin: 0 auto;
+    max-width: 1024px;
+    margin: 20px auto;
     min-height: 100%;
     background: white;
 }
 
 header {
-    background: #d2edf4;
-    background-image: linear-gradient(to bottom, #d0edf5, #e1e5f0 100%);
+    background: #D0F6F3;
     padding: 20px 15px 15px 15px;
-    position: relative;
 }
 
 h1 {
@@ -44,24 +43,14 @@ form {
     position: relative;
 }
 
-.new-message input {
+input {
     box-sizing: border-box;
-    padding: 10px 0;
-    background: transparent;
+    padding: 10px 20px;
     border: none;
     width: 100%;
     padding-right: 80px;
     font-size: 1em;
-}
-
-.new-title input {
-    box-sizing: border-box;
-    padding: 10px 0;
-    background: transparent;
-    border: none;
-    width: 100%;
-    padding-right: 80px;
-    font-size: 1em;
+    margin: 10px 0px;
 }
 
 .new-message input:focus{
@@ -74,36 +63,61 @@ ul {
     background: white;
 }
 
-.move_up, .move_down, .delete {
-    float: right;
-    font-weight: bold;
-    font-size: 1em;
-    position: relative;
-}
 
-.heart {
-    float: right;
-    font-weight: bold;
-    background: none;
-    font-size: 1em;
-    border: none;
-    position: relative;
-}
 
 li {
     position: relative;
     list-style: none;
     padding: 15px;
-    border-bottom: #eee solid 1px;
-}
-
-li .message {
-    margin-left: 10px;
+    border: 1px solid #eee;
 }
 
 li .title {
     margin-left: 10px;
-    font-size: 3em;
+    font-size: 1.2em;
     font-weight: bold;
-    color: #ff3ff6;
+    color: #FFA732;
+    text-transform: uppercase;
+    padding: 25px 10px;
+}
+
+li .message {
+    margin-left: 25px;
+    padding: 15px;
+}
+
+
+.hearts {
+    color: #C71B17;
+    vertical-align: sub;
+}
+
+.heart {
+    font-weight: bold;
+    position: relative;
+}
+
+.text {
+    float: left;
+    font-size: 1.25em;
+    text-transform: capitalize;
+    padding: 5px 0px;
+}
+
+.actions {
+    float: right;
+    font-weight: bold;
+    position: relative;
+}
+
+button.action {
+    color: #666;
+    font-size: 1.25em;
+    float: left;
+    height: 30px;
+    width: 30px;
+}
+
+.clearfix {
+    clear: both;
 }

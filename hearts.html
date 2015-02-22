@@ -27,16 +27,23 @@
 
 <template name="message">
     <li>
-        <button class="delete">x</button>
-        <span class="{{messageType}}">{{text}}</span>
+        <div class="text">
+            <span class="{{messageType}}">{{text}}</span>
+            {{#if usesHearts}}
+                <span class="hearts">{{displayHearts}}</span>
+            {{/if}}
+        </div>
 
-        <button class="move_up">⬆</button>
-        <button class="move_down">⬇</button>
+        <div class="actions">
+            {{#if usesHearts}}
+                <button class="action heart">❤</button>
+            {{/if}}
+            <button class="action move_up">⬆</button>
+            <button class="action move_down">⬇</button>
+            <button class="action delete">✖</button>
+        </div>
 
-        {{#if usesHearts}}
-            <button class="heart">heart</button>
-            <span class="hearts">{{displayHearts}}</span>
-        {{/if}}
+        <div class="clearfix"></div>
 
     </li>
 </template>
