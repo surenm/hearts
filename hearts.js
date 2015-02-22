@@ -49,8 +49,9 @@ if (Meteor.isClient) {
         "displayHearts": function () {
             var hearts = "";
             for (var i = 0; i < this.hearts; i++) {
-                hearts += "💜";
+                hearts += "❤";
             }
+            hearts += '(' + this.hearts + ')'
             return hearts
         },
         "usesHearts": function () {
